@@ -76,14 +76,8 @@ UNIT_SCALE = {
     Units.feet: 0.3048,
     Units.yards: 0.9144,
     Units.miles: 1609.340,
-    Units.sqm: 1.0,  # Already in square meters
-    Units.cbm: 1.0,  # Already in cubic meters
-    Units.percent: 0.01,  # Convert percentage to decimal
-    Units.watts: 1.0,  # Base unit for power
-    Units.watts_per_sqm: 1.0,  # Already in W/m²
-    Units.liters_per_sec_sqm: 1.0,  # Already in L/(s·m²)
 }
-"""Unit scaling factor to meters for length-based units and other scale factors."""
+"""Unit scaling factor to meters"""
 
 
 def get_units_from_string(unit: str) -> Units:

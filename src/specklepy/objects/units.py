@@ -21,6 +21,12 @@ class Units(Enum):
     yards = "yd"
     miles = "mi"
     none = "none"
+    sqm = "m²"
+    cbm = "m³"
+    percent = "%"
+    watts = "W"
+    watts_per_sqm = "W/m²"
+    liters_per_sec_sqm = "L/(s·m²)"
 
 
 UNITS_STRINGS = {
@@ -33,8 +39,13 @@ UNITS_STRINGS = {
     Units.yards: ["yd", "yard", "yards"],
     Units.miles: ["mi", "mile", "miles"],
     Units.none: ["none", "null"],
+    Units.sqm: ["sqm", "m²", "square meter", "square meters"],
+    Units.cbm: ["cbm", "m³", "cubic meter", "cubic meters"],
+    Units.percent: ["percent", "%"],
+    Units.watts: ["W", "watt", "watts"],
+    Units.watts_per_sqm: ["W/m²", "watts per square meter"],
+    Units.liters_per_sec_sqm: ["L/(s·m²)", "liters per second per square meter"],
 }
-
 
 UNITS_ENCODINGS = {
     Units.none: 0,
@@ -47,8 +58,13 @@ UNITS_ENCODINGS = {
     Units.feet: 6,
     Units.yards: 7,
     Units.miles: 8,
+    Units.sqm: 9,
+    Units.cbm: 10,
+    Units.percent: 11,
+    Units.watts: 12,
+    Units.watts_per_sqm: 13,
+    Units.liters_per_sec_sqm: 14,
 }
-
 
 UNIT_SCALE = {
     Units.none: 1,
@@ -60,8 +76,14 @@ UNIT_SCALE = {
     Units.feet: 0.3048,
     Units.yards: 0.9144,
     Units.miles: 1609.340,
+    Units.sqm: 1.0,  # Already in square meters
+    Units.cbm: 1.0,  # Already in cubic meters
+    Units.percent: 0.01,  # Convert percentage to decimal
+    Units.watts: 1.0,  # Base unit for power
+    Units.watts_per_sqm: 1.0,  # Already in W/m²
+    Units.liters_per_sec_sqm: 1.0,  # Already in L/(s·m²)
 }
-"""Unit scaling factor to meters"""
+"""Unit scaling factor to meters for length-based units and other scale factors."""
 
 
 def get_units_from_string(unit: str) -> Units:

@@ -12,6 +12,7 @@ __all__ = [
 
 
 class Units(Enum):
+    none = "none"
     mm = "mm"
     cm = "cm"
     m = "m"
@@ -20,16 +21,16 @@ class Units(Enum):
     feet = "ft"
     yards = "yd"
     miles = "mi"
-    none = "none"
     sqm = "m²"
     cbm = "m³"
     percent = "%"
-    watts = "W"
-    watts_per_sqm = "W/m²"
-    liters_per_sec_sqm = "L/(s·m²)"
+    watts = "w"
+    watts_per_sqm = "w/m²"
+    liters_per_sec_sqm = "l/(s·m²)"
 
 
 UNITS_STRINGS = {
+    Units.none: ["none", "null"],
     Units.mm: ["mm", "mil", "millimeters", "millimetres"],
     Units.cm: ["cm", "centimetre", "centimeter", "centimetres", "centimeters"],
     Units.m: ["m", "meter", "meters", "metre", "metres"],
@@ -38,13 +39,12 @@ UNITS_STRINGS = {
     Units.feet: ["ft", "foot", "feet"],
     Units.yards: ["yd", "yard", "yards"],
     Units.miles: ["mi", "mile", "miles"],
-    Units.none: ["none", "null"],
-    Units.sqm: ["sqm", "m²", "square meter", "square meters"],
-    Units.cbm: ["cbm", "m³", "cubic meter", "cubic meters"],
+    Units.sqm: ["sqm", "m²"],
+    Units.cbm: ["cbm", "m³"],
     Units.percent: ["percent", "%"],
-    Units.watts: ["W", "watt", "watts"],
-    Units.watts_per_sqm: ["W/m²", "watts per square meter"],
-    Units.liters_per_sec_sqm: ["L/(s·m²)", "liters per second per square meter"],
+    Units.watts: ["w", "watt", "watts"],
+    Units.watts_per_sqm: ["w/m²", "watts per square meter"],
+    Units.liters_per_sec_sqm: ["l/(s·m²)", "liters per second per square meter"]
 }
 
 UNITS_ENCODINGS = {
@@ -63,7 +63,7 @@ UNITS_ENCODINGS = {
     Units.percent: 11,
     Units.watts: 12,
     Units.watts_per_sqm: 13,
-    Units.liters_per_sec_sqm: 14,
+    Units.liters_per_sec_sqm:14,
 }
 
 UNIT_SCALE = {

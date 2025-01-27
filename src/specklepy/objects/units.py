@@ -27,6 +27,7 @@ class Units(Enum):
     watts = "w"
     watts_per_sqm = "w/m²"
     liters_per_sec_sqm = "l/(s·m²)"
+    unknown = "฿"
 
 
 UNITS_STRINGS = {
@@ -44,7 +45,8 @@ UNITS_STRINGS = {
     Units.percent: ["percent", "%"],
     Units.watts: ["w", "watt", "watts"],
     Units.watts_per_sqm: ["w/m²", "watts per square meter"],
-    Units.liters_per_sec_sqm: ["l/(s·m²)", "liters per second per square meter"]
+    Units.liters_per_sec_sqm: ["l/(s·m²)", "liters per second per square meter"],
+    Units.unknown: ["฿", "Test"]
 }
 
 UNITS_ENCODINGS = {
@@ -63,7 +65,8 @@ UNITS_ENCODINGS = {
     Units.percent: 11,
     Units.watts: 12,
     Units.watts_per_sqm: 13,
-    Units.liters_per_sec_sqm:14,
+    Units.liters_per_sec_sqm: 14,
+    Units.unknown: 15
 }
 
 UNIT_SCALE = {
